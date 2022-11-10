@@ -48,3 +48,9 @@ def update_human(id):
 def delete_human(id):
     human_repository.delete(id)
     return redirect("/humans")
+
+# SHOW ROUTE
+@humans_blueprint.route("/humans/<id>")
+def show_human(id):
+    human = human_repository.select(id)
+    return render_template('humans/show.html', human = human)
