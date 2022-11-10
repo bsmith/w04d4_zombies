@@ -5,9 +5,10 @@ DROP TABLE IF EXISTS zombie_types;
 
 CREATE TABLE humans (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name TEXT
 );
 
+-- Lookup table
 CREATE TABLE zombie_types (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255)
@@ -15,7 +16,7 @@ CREATE TABLE zombie_types (
 
 CREATE TABLE zombies (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    name TEXT,
     zombie_type_id INT NOT NULL REFERENCES zombie_types(id)
 );
 
